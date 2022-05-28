@@ -6,10 +6,12 @@ type CreateRoundData = {
 };
 
 type Round = {
-  id: number;
-  player_id: number;
-  questions: Question[];
-  answers: Answer[];
+  round: {
+    id: number;
+    player_id: number;
+    questions: Question[];
+    answers: Answer[];
+  };
 };
 
 type Question = {
@@ -61,3 +63,17 @@ type InitialStepData = {
   category: number;
   player_name: string;
 };
+
+type AnswerResponse = {
+  answer: {
+    id: number;
+    question_id: number;
+    option_id: 84;
+    correct: boolean;
+  };
+};
+
+type SendAnswerRequest = {
+  question_id: number;
+  option_id: number;
+}
