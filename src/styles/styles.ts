@@ -1,23 +1,15 @@
 import styled from "styled-components";
-
-const mediaQueries = {
-  xsMin: "320px",
-  xsMax: "576px",
-  smMin: "577px",
-  smMax: "768px",
-  mdMin: "769px",
-  mdMax: "1023px",
-  lgMin: "1024px",
-  lgMax: "1376px",
-  xlMin: "1377px",
-};
+import { mediaQueries } from "./mediaQueries";
 
 const Main = styled.main`
-  @media (min-width: ${mediaQueries.xsMin}) and (max-width: ${mediaQueries.xsMax}) {
+  @media (min-width: ${mediaQueries.xsMin}) and (max-width: ${mediaQueries.mdMin}) {
     width: 100vw;
     height: 100vh;
-    padding: 10px 15px;
+    padding: 3rem 15px;
     border: 1px solid #ccc;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
   }
 
   width: 100vw;
@@ -30,26 +22,78 @@ const PageTitle = styled.h1`
 `;
 const Form = styled.form`
   @media (min-width: ${mediaQueries.xsMin}) and (max-width: ${mediaQueries.xsMax}) {
-    width: 60vw;
-    height: 60vh;
+    width: 100%;
+    height: auto;
     border: 1px solid #ccc;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+  @media (min-width: ${mediaQueries.smMin}) and (max-width: ${mediaQueries.smMax}) {
+    width: 90%;
+    height: auto;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 3rem;
   }
 `;
 
-const Input = styled.input`
+const OptionsContainer = styled.section`
   @media (min-width: ${mediaQueries.xsMin}) and (max-width: ${mediaQueries.xsMax}) {
-    background: none;
-    border: none;
-    border-bottom: 1px solid #9e9e9e;
-    margin: 15px 0;
-    padding: 0.5em;
-  }
-
-  &:focus {
-    border-bottom: 2px solid #6c63ff;
-    border: none;
   }
 `;
+const OptionButton = styled.input`
+  @media (min-width: ${mediaQueries.xsMin}) and (max-width: ${mediaQueries.xsMax}) {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+    margin: 1rem;
 
-export { Form, Input, Main, PageTitle };
+    &:checked + label {
+      border: 2px dashed #444;
+    }
+    &:focus + label {
+      background-color: #bfb;
+      border-color: #4c4;
+    }
+  }
+`;
+const OptionsLabel = styled.label`
+  @media (min-width: ${mediaQueries.xsMin}) and (max-width: ${mediaQueries.xsMax}) {
+    font-size: 1.2rem;
+    display: inline-block;
+    background-color: #ddd;
+    padding: 10px 20px;
+    border: 2px solid #444;
+    border-radius: 4px;
+    margin: 1rem;
+    text-align: center;
+  }
+  &:hover {
+    cursor: pointer;
+    background-color: #bfb;
+  }
+`;
+const ImageContainer = styled.div`
+  opacity: 0.4;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row;
+  width: 100%;
+`;
+
+export {
+  Form,
+  ImageContainer,
+  Main,
+  PageTitle,
+  OptionButton,
+  OptionsContainer,
+  OptionsLabel,
+};
 
