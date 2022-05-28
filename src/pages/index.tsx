@@ -1,17 +1,14 @@
 import Head from "next/head";
+import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import InitialStep from "../components/InitialStep";
 import QuestionsStep from "../components/QuestionsStep";
 import ResultStep from "../components/ResultStep";
 import { axiosGet } from "../services";
-import { Main, PageTitle } from "../styles/styles";
-
-/**
- * 
- * Fluxo: Faz POST para /rounds com o nome do usuário e a categoria selecionada
-
-
- */
+import { ImageContainer, Main, PageTitle } from "../styles/styles";
+import { calculateResult } from "../utils";
+const AskImage = "/assets/ask_image.svg";
+const BookImage = "/assets/book_image.svg";
 
 const Home = () => {
   const [categories, setCategories] = useState<Categories["categories"][] | []>(
@@ -23,6 +20,7 @@ const Home = () => {
   );
   const [round, setRound] = useState<Round | null>(null);
   const [initialStepData, setInitiaStepData] = useState<InitialStepData>();
+  const [roundResult, setRoundResult] = useState<AnswerResponse[]>();
 
   const handleGet = useCallback(() => {
     return axiosGet<{ categories: [{ id: number; name: string }] }>({
@@ -55,10 +53,21 @@ const Home = () => {
       );
     } else if (stepper === "QUESTIONS") {
       return (
-        <QuestionsStep round={round!} onNextStep={() => setStepper("RESULT")} />
+        <QuestionsStep
+          round={round!}
+          onNextStep={(answers) => {
+            setRoundResult(answers);
+            setStepper("RESULT");
+          }}
+        />
       );
     } else {
-      return <ResultStep onNextStep={() => setStepper("INITIAL")} />;
+      return (
+        <ResultStep
+          onNextStep={() => setStepper("INITIAL")}
+          result={calculateResult(roundResult!)}
+        />
+      );
     }
   };
 
@@ -76,6 +85,21 @@ const Home = () => {
       <Main>
         <PageTitle>Quiz App</PageTitle>
         {handleStep()}
+
+        <ImageContainer>
+          <Image
+            src={AskImage}
+            width={180}
+            height={300}
+            alt={"Imagem de uma pessoa pedindo algo"}
+          />
+          <Image
+            src={BookImage}
+            width={180}
+            height={300}
+            alt={"Imagem de um livro"}
+          />
+        </ImageContainer>
       </Main>
     </>
   );
