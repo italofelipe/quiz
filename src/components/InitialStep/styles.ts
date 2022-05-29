@@ -87,6 +87,12 @@ const Button = styled.button`
     box-shadow: 1px 2px 7px #6c63bb;
     cursor: pointer;
   }
+  &:disabled {
+    cursor: default;
+    background-color: #BDBDBD;
+    box-shadow: none;
+
+  }
 `;
 export { Button, FormInner, FormContainer, Input, InputLabel, Select };
 

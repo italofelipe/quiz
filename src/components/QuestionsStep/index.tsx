@@ -21,7 +21,6 @@ const QuestionsStep = ({ onNextStep, round }: ResultStepProps) => {
   const [selectedAnswer, setSelectedAnswer] = useState<SendAnswerRequest>();
 
   const handleSendAnswer = (questionData: SendAnswerRequest) => {
-    console.log("Numero da pergunta", questionsCounter);
     questionsCounter === 4
       ? onNextStep(answers)
       : setQuestionsCounter(questionsCounter + 1);
@@ -42,7 +41,6 @@ const QuestionsStep = ({ onNextStep, round }: ResultStepProps) => {
       .catch(() => setError(true));
   };
   useEffect(() => {
-    console.log("Round", round.round);
     setRoundData(round);
   }, [round]);
   useEffect(() => {}, [selectedAnswer]);
@@ -55,6 +53,7 @@ const QuestionsStep = ({ onNextStep, round }: ResultStepProps) => {
       {questionsCounter < 5 ? (
         <Form>
           <QuestionsHeader>
+            {error && <p>Houve um erro ao processar a sua resposta.</p>}
             <QuestionAndStrikesCounter>
               <p>
                 {`${questionsCounter + 1}/${round.round.questions.length}`}:
