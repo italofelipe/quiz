@@ -65,7 +65,7 @@ const Home = () => {
       return (
         <ResultStep
           onNextStep={() => setStepper("INITIAL")}
-          result={calculateResult(roundResult!)}
+          roundData={calculateResult(roundResult!)}
         />
       );
     }

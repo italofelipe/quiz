@@ -64,5 +64,10 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+.CircularProgressbar-text {
+  dominant-baseline: middle;
+  text-anchor: middle;
+}
 `;
 export default GlobalStyle;

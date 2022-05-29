@@ -1,5 +1,5 @@
-const calculateResult = (result: AnswerResponse[]): number => {
-  return result.map((answer) => answer.answer.correct).length;
+const calculateResult = (result: AnswerResponse[]) => {
+  return result.filter((answer) => answer.answer.correct);
 };
 
 const dynamicResultStyles = (
