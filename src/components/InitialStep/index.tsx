@@ -20,6 +20,7 @@ const InitialStep = ({ categories, onNextStep }: InitialStepProps) => {
     category: 3,
     player_name: "",
   });
+  const [error, setError] = useState(false);
 
   const handlePost = (
     event: FormEvent<HTMLFormElement> | React.MouseEvent<HTMLButtonElement>
@@ -37,11 +38,12 @@ const InitialStep = ({ categories, onNextStep }: InitialStepProps) => {
       .then((CATEndpontResponse) => {
         onNextStep(initialStepData, CATEndpontResponse.data);
       })
-      .catch();
+      .catch(() => setError(true));
   };
   return (
     <Form onSubmit={(event) => handlePost(event)}>
       <FormContainer>
+        {error && <p>Houve um erro ao carregar os tipos de perguntas.</p>}
         <FormInner size={30}>
           <InputLabel htmlFor="player-name">Jogador</InputLabel>
         </FormInner>
