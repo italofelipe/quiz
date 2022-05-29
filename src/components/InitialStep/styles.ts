@@ -6,6 +6,12 @@ const FormContainer = styled.div`
   flex-flow: row;
   width: 100%;
   margin: 0 0 1rem;
+
+  @media (min-width: ${mediaQueries.mdMin}) and (max-width: ${mediaQueries.mdMax}) {
+    &:nth-child(2) {
+      justify-content: start;
+    }
+  }
 `;
 type IFormInner = {
   size: number;
@@ -14,16 +20,32 @@ const FormInner = styled.div<IFormInner>`
   width: ${({ size }) => size}%;
   display: flex;
   align-items: center;
+  @media (min-width: ${mediaQueries.mdMin}) and (max-width: ${mediaQueries.xlMin}) {
+    width: 50%;
+    justify-content: center;
+    &:nth-child(2) {
+      justify-content: start;
+    }
+    &:first-child {
+      justify-content: flex-end;
+    }
+  }
 `;
 
 const Select = styled.select`
+  padding: 0.5rem;
   @media (min-width: ${mediaQueries.xsMin}) and (max-width: ${mediaQueries.xsMax}) {
     width: 55vw;
   }
   @media (min-width: ${mediaQueries.smMin}) and (max-width: ${mediaQueries.smMax}) {
     width: 55vw;
   }
-  padding: 0.5rem;
+  @media (min-width: ${mediaQueries.smMin}) and (max-width: ${mediaQueries.smMax}) {
+    width: 55vw;
+  }
+  @media (min-width: ${mediaQueries.mdMin}) and (max-width: ${mediaQueries.xlMin}) {
+    width: 11rem;
+  }
 `;
 
 const InputLabel = styled.label`
@@ -55,6 +77,16 @@ const Input = styled.input`
     border: none;
   }
 `;
-
-export { FormInner, FormContainer, Input, InputLabel, Select };
+const Button = styled.button`
+  padding: 1rem 1.5rem;
+  background-color: #6c63ff;
+  border: none;
+  color: #f5f5f5;
+  font-weight: bold;
+  &:hover {
+    box-shadow: 1px 2px 7px #6c63bb;
+    cursor: pointer;
+  }
+`;
+export { Button, FormInner, FormContainer, Input, InputLabel, Select };
 

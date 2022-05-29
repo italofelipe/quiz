@@ -1,7 +1,7 @@
 import { FormEvent, useState } from "react";
 import { axiosPost } from "../../services";
 import { Form } from "../../styles/styles";
-import { FormContainer, FormInner, Input, InputLabel, Select } from "./styles";
+import { Button, FormContainer, FormInner, Input, InputLabel, Select } from "./styles";
 
 type InitialStepProps = {
   onNextStep: (stepData: InitialStepData, round: Round) => void;
@@ -80,7 +80,7 @@ const InitialStep = ({ categories, onNextStep }: InitialStepProps) => {
         <p>Fetching categories, wait a minute.</p>
       )}
 
-      <button onClick={(event) => handlePost(event)}>Jogar</button>
+      <Button onClick={(event) => handlePost(event)}>Jogar</Button>
     </Form>
   );
 };
