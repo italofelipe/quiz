@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react";
 import { axiosPost } from "../../services";
-import { Form, OptionButton, OptionsLabel } from "../../styles/styles";
+import { Form } from "../../styles/styles";
+import {
+  OptionButton,
+  OptionsLabel,
+  QuestionAndStrikesCounter,
+  QuestionsHeader
+} from "./styles";
 
 type ResultStepProps = {
   onNextStep: (allAnswers: AnswerResponse[]) => void;
@@ -40,12 +46,23 @@ const QuestionsStep = ({ onNextStep, round }: ResultStepProps) => {
     setRoundData(round);
   }, [round]);
   useEffect(() => {}, [selectedAnswer]);
+
+  const filterByRightAnswer = (answersList: AnswerResponse[]) => {
+    return answersList.filter((answer) => answer.answer.correct);
+  };
   return (
-    <section>
-      <span>Pergunta nº {questionsCounter + 1}:</span>
+    <>
       {questionsCounter < 5 ? (
         <Form>
-          <h3>{roundData.round.questions[questionsCounter].description}</h3>
+          <QuestionsHeader>
+            <QuestionAndStrikesCounter>
+              <p>
+                {`${questionsCounter + 1}/${round.round.questions.length}`}:
+              </p>
+              <p>{`Certas ${filterByRightAnswer(answers).length}`}</p>
+            </QuestionAndStrikesCounter>
+            <h3>{roundData.round.questions[questionsCounter].description}</h3>
+          </QuestionsHeader>
           {roundData.round.questions[questionsCounter].options.map((option) => (
             <>
               <OptionButton
@@ -73,7 +90,7 @@ const QuestionsStep = ({ onNextStep, round }: ResultStepProps) => {
       ) : (
         <p>We are computing the results, wait a minute.</p>
       )}
-    </section>
+    </>
   );
 };
 
