@@ -16,16 +16,16 @@ Uma aplicação Quiz feita com Next.js, Styled Components and TypeScript.
 ### Bonuses checklist
 
 [ - ] - Atomic Design;
-[ x ] - Criação dos próprios componentes em detrimento de utilização de bibliotecas externas (ex: MUI);
-[ x ] - Utilização de React Hooks e Context API em detrimento de bibliotecas externas de gerenciamento de estados (ex: Redux, Recoil e Mobx);
-[ x ] - Utilização de SCSS ou Styled Components;
+[ x ] - Criação dos próprios componentes em detrimento de utilização de bibliotecas externas (ex: MUI);     
+[ x ] - Utilização de React Hooks e Context API em detrimento de bibliotecas externas de gerenciamento de estados   (ex: Redux, Recoil e Mobx);  
+[ x ] - Utilização de SCSS ou Styled Components;  
 
 
 
 ### Seria impressionante
-[ x ] -Utilização do Next.js;
-[ x ] - Testes automatizados;
-[ x ] - Utilização de ferramenta ESLint para padronização de código;
+[ x ] -Utilização do Next.js;  
+[ x ] - Testes automatizados;  
+[ x ] - Utilização de ferramenta ESLint para padronização de código;  
 
       [-] = Partially done
       [X] = Done
@@ -33,15 +33,15 @@ Uma aplicação Quiz feita com Next.js, Styled Components and TypeScript.
 
 # Nos bastidores:
 
-Inicialmente, concentrei meus esforços em configurar o ambiente de desenvolvimento, que consiste de:
+Inicialmente, concentrei meus esforços em configurar o ambiente de desenvolvimento, que consiste de:  
 
-- Configurar projeto (Next JS)
-- Configurar ambiente de testes (Jest) e biblioteca de testes para o React (React Testing Library)
-- Configurar git hooks (Husky, lint-staged e @commitlint)
-- Configurar estilos globais (como por exemplo css reset) com Styled Components
-- Configurar o \_app.tsx page, que é um entrypoint customizado para aplicações Next.
-- Configurar Cypress.
-- Configurar jobs de CI/CD (GitHub Actions) no arquivo yml.
+- Configurar projeto (Next JS)  
+- Configurar ambiente de testes (Jest) e biblioteca de testes para o React (React Testing Library)  
+- Configurar git hooks (Husky, lint-staged e @commitlint)  
+- Configurar estilos globais (como por exemplo css reset) com Styled Components.  
+- Configurar o \_app.tsx page, que é um entrypoint customizado para aplicações Next.  
+- Configurar Cypress.  
+- Configurar jobs de CI/CD (GitHub Actions) no arquivo yml.  
 
 
 Após a conclusão dos passos acima é que comecei a codificar de verdade. Comecei com a "documentação" dos tipos. Para isso, vi o que os endpoints retornavam e assim, criei os tipos deles, num arquivo de tipos global. Após isso, olhei para o protótipo e mentalizei quais telas precisaria codificar, e como elas trocariam dados entre si. 
