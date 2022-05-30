@@ -20,9 +20,19 @@ const FormInner = styled.div<IFormInner>`
   width: ${({ size }) => size}%;
   display: flex;
   align-items: center;
-  @media (min-width: ${mediaQueries.mdMin}) and (max-width: ${mediaQueries.xlMin}) {
+  @media (min-width: ${mediaQueries.mdMin}) and (max-width: ${mediaQueries.lgMax}) {
     width: 50%;
     justify-content: center;
+    &:nth-child(2) {
+      justify-content: start;
+    }
+    &:first-child {
+      justify-content: flex-end;
+    }
+  }
+
+  @media (min-width: 1376px)  {
+    width: 50%;
     &:nth-child(2) {
       justify-content: start;
     }
@@ -43,8 +53,14 @@ const Select = styled.select`
   @media (min-width: ${mediaQueries.smMin}) and (max-width: ${mediaQueries.smMax}) {
     width: 55vw;
   }
-  @media (min-width: ${mediaQueries.mdMin}) and (max-width: ${mediaQueries.xlMin}) {
+  @media (min-width: ${mediaQueries.mdMin}) and (max-width: ${mediaQueries.mdMax}) {
     width: 11rem;
+  }
+  @media (min-width: ${mediaQueries.lgMin}) and (max-width: ${mediaQueries.lgMax}) {
+    width: 11.5rem;
+  }
+  @media (min-width: ${mediaQueries.xlMin}) {
+    width: 15rem;
   }
 `;
 
@@ -71,6 +87,9 @@ const Input = styled.input`
     padding: 0.5em;
     width: 55vw;
   }
+  @media (min-width: ${mediaQueries.xlMin}) {
+    width: 15rem;
+  }
 
   &:focus {
     border-bottom: 2px solid #6c63ff;
@@ -89,9 +108,8 @@ const Button = styled.button`
   }
   &:disabled {
     cursor: default;
-    background-color: #BDBDBD;
+    background-color: #bdbdbd;
     box-shadow: none;
-
   }
 `;
 export { Button, FormInner, FormContainer, Input, InputLabel, Select };
