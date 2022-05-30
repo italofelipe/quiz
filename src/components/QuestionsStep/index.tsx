@@ -5,7 +5,8 @@ import {
   OptionButton,
   OptionsLabel,
   QuestionAndStrikesCounter,
-  QuestionsHeader
+  QuestionsHeader,
+  QuestionTitle
 } from "./styles";
 
 type ResultStepProps = {
@@ -55,12 +56,14 @@ const QuestionsStep = ({ onNextStep, round }: ResultStepProps) => {
           <QuestionsHeader>
             {error && <p>Houve um erro ao processar a sua resposta.</p>}
             <QuestionAndStrikesCounter>
-              <p>
+              <p data-testid="questions-counter">
                 {`${questionsCounter + 1}/${round.round.questions.length}`}:
               </p>
-              <p>{`Certas ${filterByRightAnswer(answers).length}`}</p>
+              <p data-testid="strikes-counter">{`Certas ${filterByRightAnswer(answers).length}`}</p>
             </QuestionAndStrikesCounter>
-            <h3>{roundData.round.questions[questionsCounter].description}</h3>
+            <QuestionTitle>
+              {roundData.round.questions[questionsCounter].description}
+            </QuestionTitle>
           </QuestionsHeader>
           {roundData.round.questions[questionsCounter].options.map((option) => (
             <>
@@ -69,6 +72,7 @@ const QuestionsStep = ({ onNextStep, round }: ResultStepProps) => {
                 checked={selectedAnswer?.option_id === option.id}
                 value={!selectedAnswer ? undefined : selectedAnswer.option_id}
                 id={option.label}
+                data-testid="option-button"
                 onChange={() => {
                   setSelectedAnswer({
                     option_id: option.id,
@@ -80,7 +84,7 @@ const QuestionsStep = ({ onNextStep, round }: ResultStepProps) => {
                   });
                 }}
               />
-              <OptionsLabel htmlFor={option.label} key={option.id}>
+              <OptionsLabel data-testid="option-button-label" htmlFor={option.label} key={option.id}>
                 {option.label}
               </OptionsLabel>
             </>

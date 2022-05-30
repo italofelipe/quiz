@@ -49,6 +49,7 @@ const InitialStep = ({ categories, onNextStep }: InitialStepProps) => {
         </FormInner>
         <FormInner size={70}>
           <Input
+            data-testid="player-name"
             id="player-name"
             placeholder="Nome do jogador"
             value={initialStepData.player_name}
@@ -69,6 +70,7 @@ const InitialStep = ({ categories, onNextStep }: InitialStepProps) => {
           <FormInner size={70}>
             <Select
               id="category-select"
+              data-testid="categories-select"
               onChange={(e) =>
                 setInitialStepData({
                   ...initialStepData,
@@ -77,7 +79,11 @@ const InitialStep = ({ categories, onNextStep }: InitialStepProps) => {
               }
             >
               {categories.map((cat) => (
-                <option key={cat.id} value={cat.id}>
+                <option
+                  data-testid="category-option"
+                  key={cat.id}
+                  value={cat.id}
+                >
                   {" "}
                   {cat.name}
                 </option>
@@ -90,6 +96,7 @@ const InitialStep = ({ categories, onNextStep }: InitialStepProps) => {
       )}
 
       <Button
+        data-testid="play-button"
         disabled={initialStepData.player_name.length < 2}
         onClick={(event) => handlePost(event)}
       >

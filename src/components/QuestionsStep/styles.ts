@@ -59,11 +59,16 @@ const QuestionAndStrikesCounter = styled.div`
   justify-content: space-between;
   margin: 1rem 0;
 `;
+
+const QuestionTitle = styled.h3`
+  text-align: center;
+`
 export {
   OptionsContainer,
   OptionButton,
   OptionsLabel,
   QuestionAndStrikesCounter,
   QuestionsHeader,
+  QuestionTitle
 };
 

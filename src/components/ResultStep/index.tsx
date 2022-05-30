@@ -17,6 +17,7 @@ const ResultStep = ({ onNextStep, roundData }: ResultStepProps) => {
     const allQuestionsLength = new Array(5).fill("");
     return allQuestionsLength?.map((_, index) => (
       <Star
+        data-testid="rating"
         key={index}
         checked={roundData![index] ? roundData![index].answer.correct : false}
       />
@@ -36,7 +37,10 @@ const ResultStep = ({ onNextStep, roundData }: ResultStepProps) => {
       </ProgressContainer>
       <LowerContainer>
         <div>{starsHandler()}</div>
-        <Button onClick={() => onNextStep()}>Jogar de novo</Button>
+        <Button
+        data-testid="play-again-button"
+        
+         onClick={() => onNextStep()}>Jogar de novo</Button>
       </LowerContainer>
     </ResultStepContainer>
   );
