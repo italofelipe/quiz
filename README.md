@@ -13,7 +13,7 @@ Uma aplicação Quiz feita com Next.js, Styled Components and TypeScript.
  https://basementquiz.vercel.app/
 
 
-### Bonuses checklist
+### Bonus checklist
 
 [ - ] - Atomic Design;  
 [ x ] - Criação dos próprios componentes em detrimento de utilização de bibliotecas externas (ex: MUI);  
@@ -27,9 +27,9 @@ Uma aplicação Quiz feita com Next.js, Styled Components and TypeScript.
 [ x ] - Testes automatizados;  
 [ x ] - Utilização de ferramenta ESLint para padronização de código;  
 
-      [-] = Partially done
-      [X] = Done
-      [] = Not done at all
+      [-] = Parcialmente feito
+      [X] = Feito
+      [] = Não feito
 
 # Nos bastidores:
 
