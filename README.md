@@ -60,4 +60,4 @@ Por fim, fui atacando cada passo individualmente, uma vez que os esboços já es
 
 Espero que tenham gostado ;)
 
-#####Italo Chagas - Front End Technical Leader
+#### Italo Chagas - Front End Technical Leader
