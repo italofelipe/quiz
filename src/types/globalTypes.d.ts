@@ -68,7 +68,7 @@ type AnswerResponse = {
   answer: {
     id: number;
     question_id: number;
-    option_id: 84;
+    option_id: number;
     correct: boolean;
   };
 };
@@ -76,4 +76,4 @@ type AnswerResponse = {
 type SendAnswerRequest = {
   question_id: number;
   option_id: number;
-}
+};

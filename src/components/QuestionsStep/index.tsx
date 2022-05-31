@@ -61,7 +61,7 @@ const QuestionsStep = ({ onNextStep, round }: ResultStepProps) => {
               </p>
               <p data-testid="strikes-counter">{`Certas ${filterByRightAnswer(answers).length}`}</p>
             </QuestionAndStrikesCounter>
-            <QuestionTitle>
+            <QuestionTitle data-testid="question-counter">
               {roundData.round.questions[questionsCounter].description}
             </QuestionTitle>
           </QuestionsHeader>
