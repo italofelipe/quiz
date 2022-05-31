@@ -13,11 +13,11 @@ Uma aplicação Quiz feita com Next.js, Styled Components and TypeScript.
  https://basementquiz.vercel.app/
 
 
-### Bonuses checklist
+### Bonus checklist
 
-[ - ] - Atomic Design;
-[ x ] - Criação dos próprios componentes em detrimento de utilização de bibliotecas externas (ex: MUI);     
-[ x ] - Utilização de React Hooks e Context API em detrimento de bibliotecas externas de gerenciamento de estados   (ex: Redux, Recoil e Mobx);  
+[ - ] - Atomic Design;  
+[ x ] - Criação dos próprios componentes em detrimento de utilização de bibliotecas externas (ex: MUI);  
+[ x ] - Utilização de React Hooks e Context API em detrimento de bibliotecas externas de gerenciamento de estados (ex: Redux, Recoil e Mobx);  
 [ x ] - Utilização de SCSS ou Styled Components;  
 
 
@@ -27,9 +27,9 @@ Uma aplicação Quiz feita com Next.js, Styled Components and TypeScript.
 [ x ] - Testes automatizados;  
 [ x ] - Utilização de ferramenta ESLint para padronização de código;  
 
-      [-] = Partially done
-      [X] = Done
-      [] = Not done at all
+      [-] = Parcialmente feito
+      [X] = Feito
+      [] = Não feito
 
 # Nos bastidores:
 
@@ -38,7 +38,7 @@ Inicialmente, concentrei meus esforços em configurar o ambiente de desenvolvime
 - Configurar projeto (Next JS)  
 - Configurar ambiente de testes (Jest) e biblioteca de testes para o React (React Testing Library)  
 - Configurar git hooks (Husky, lint-staged e @commitlint)  
-- Configurar estilos globais (como por exemplo css reset) com Styled Components.  
+- Configurar estilos globais (como por exemplo css reset) com Styled Components  
 - Configurar o \_app.tsx page, que é um entrypoint customizado para aplicações Next.  
 - Configurar Cypress.  
 - Configurar jobs de CI/CD (GitHub Actions) no arquivo yml.  
@@ -60,4 +60,4 @@ Por fim, fui atacando cada passo individualmente, uma vez que os esboços já es
 
 Espero que tenham gostado ;)
 
-#####Italo Chagas - Front End Technical Leader
+#### Italo Chagas - Front End Technical Leader
