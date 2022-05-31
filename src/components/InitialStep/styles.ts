@@ -54,7 +54,7 @@ const Select = styled.select`
     width: 55vw;
   }
   @media (min-width: ${mediaQueries.mdMin}) and (max-width: ${mediaQueries.mdMax}) {
-    width: 11rem;
+    width: 11.5rem;
   }
   @media (min-width: ${mediaQueries.lgMin}) and (max-width: ${mediaQueries.lgMax}) {
     width: 11.5rem;
